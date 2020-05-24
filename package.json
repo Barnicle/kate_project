@@ -4,6 +4,7 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
+    "core-js": "^3.6.5",
     "node-sass": "^4.14.0"
   },
   "scripts": {

@@ -7,10 +7,10 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "build"),
-    publicPath: "/",
+    publicPath: "./",
   },
   devServer: {
-    contentBase: "./build",
+    contentBase: "./build/",
     port: 3000,
     hot: true,
     open: true,
@@ -33,7 +33,7 @@ module.exports = {
         loader: "babel-loader",
       },
       {
-        test: /\.(png|jpg|svg|ttf)$/,
+        test: /\.(png|jpg|svg)$/,
         exclude: /node_modules/,
         use: [
           {
@@ -42,6 +42,21 @@ module.exports = {
               name: "[path][name].[ext]",
               context: path.resolve(__dirname, "images/"),
               outputPath: "img/",
+              useRelativePaths: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.ttf$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[path][name].[ext]",
+              context: path.resolve(__dirname, "fonts/"),
+              outputPath: "fonts/",
               // useRelativePaths: true,
             },
           },
