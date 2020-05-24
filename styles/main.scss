@@ -1,0 +1,89 @@
+.main__container {
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  min-width: 14rem;
+  width: 100vw;
+}
+
+.main__container::after {
+  position: fixed;
+  content: "";
+  height: 100vw;
+  width: 100%;
+  background: url("../images/background.svg") no-repeat;
+  background-position: center;
+  background-size: 100vw;
+  transform: rotate(-90deg);
+  z-index: -1;
+}
+.title {
+  color: rgb(14, 231, 14);
+  font-size: 64px;
+  width: 200px;
+  margin: 50px;
+}
+.event-info__wrapper {
+  margin-top: 10rem;
+}
+.event-info__section {
+  display: flex;
+  flex-flow: column wrap;
+  transition: all ease-in-out 1s;
+  margin: 0.5rem;
+}
+.event-info__section p {
+  color: lightgrey;
+  font-weight: 600;
+  max-width: 30rem;
+  min-width: 10rem;
+}
+
+.event-info__section h2 {
+  font-family: "Broadway";
+  color: violet;
+  font-size: 34px;
+  font-weight: 1200;
+  cursor: pointer;
+}
+.event-info__section h2:hover {
+  font-size: 3rem;
+  transition: linear 0.2s;
+}
+@media (min-width: 1440px) {
+  .event-info__wrapper {
+    margin-top: 100px;
+  }
+  .main__container::after {
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main__container::after {
+    margin-top: 0%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main__container::after {
+    margin-top: 70%;
+    background-size: right 100% 400%;
+  }
+}
+
+@media (max-width: 425px) {
+  .main__container::after {
+    margin-top: 110%;
+    background-size: 180% 400%;
+  }
+  .event-info__wrapper {
+    font-size: 1rem;
+    height: 500px;
+    position: fixed;
+    overflow: scroll;
+  }
+}

@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  font-size: 14px;
+  margin: 0;
+}
+*::after,
+*::before {
+  margin: 0;
+}
+@font-face {
+  font-family: "Broadway";
+  src: url("./fonts/Broadway_Regular.ttf");
+}
+body {
+  position: relative;
+  font-family: "Broadway";
+  background-color: #010101;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+@import "./main.scss";
